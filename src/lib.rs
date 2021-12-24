@@ -1,9 +1,12 @@
 use anyhow::{Context, Result};
 
-pub fn find_matches(bufreader: impl std::io::BufRead, pattern: &str, mut out: impl std::io::Write) -> Result<()> {
-
+pub fn find_matches(
+    bufreader: impl std::io::BufRead,
+    pattern: &str,
+    mut out: impl std::io::Write,
+) -> Result<()> {
     if pattern.is_empty() {
-        return Err(anyhow::anyhow!("Empty pattern"))
+        return Err(anyhow::anyhow!("Empty pattern"));
     }
 
     for line in bufreader.lines() {
@@ -24,4 +27,3 @@ fn test_find_matches() {
     assert!(find_matches(bufreader, "lorem", &mut result).is_ok());
     assert_eq!(result, b"lorem ipsum\n");
 }
-

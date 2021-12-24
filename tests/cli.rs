@@ -1,6 +1,6 @@
 use assert_cmd::prelude::*; // Add methods on commands
-use predicates::prelude::*; // Used for writing assertions
 use assert_fs::prelude::*;
+use predicates::prelude::*; // Used for writing assertions
 use std::process::Command; // Run programs
 
 #[test]
@@ -14,7 +14,6 @@ fn file_doesnt_exist() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
-
 
 #[test]
 fn find_content_in_file() -> Result<(), Box<dyn std::error::Error>> {
@@ -32,7 +31,6 @@ fn find_content_in_file() -> Result<(), Box<dyn std::error::Error>> {
 
 #[test]
 fn test_empty_string_as_pattern() -> Result<(), Box<dyn std::error::Error>> {
-
     let mut cmd = Command::cargo_bin("grrs")?;
     let file = assert_fs::NamedTempFile::new("sample.txt")?;
     file.write_str("A test\nActual content\nMore content\nAnother test")?;
