@@ -1,0 +1,24 @@
+[package]
+name = "grrs-64bit"
+version = "0.1.0"
+edition = "2021"
+authors = ["Himanshu Neema"]
+license = "MIT OR Apache-2.0"
+description = "A tool to search for a pattern in single file"
+readme = "README.md"
+homepage = "https://github.com/64bit/grrs"
+repository = "https://github.com/64bit/grrs"
+keywords = ["cli", "search", "demo"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+structopt = "0.3.25"
+anyhow = "1.0.52"
+
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "2.1"
+assert_fs = "1.0"
+
+
